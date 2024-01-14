@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="MainFrame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-20</y>
+     <width>1281</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(242, 242, 255);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="TopBlueCurve" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-100</x>
+      <y>-230</y>
+      <width>1400</width>
+      <height>410</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.911, fx:0.495, fy:0.5, stop:0 rgba(124, 112, 255, 255), stop:0.522167 rgba(124, 112, 255, 255), stop:0.522685 rgba(255, 255, 255, 255), stop:0.527094 rgba(255, 255, 255, 0));
+</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="CurrencyBox">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>390</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Select</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>PKR</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>$ US Dollar</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Euro</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pound</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>UAE Dirham</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Saudi Riyal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Chinese Yuan</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Others</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>350</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Currency:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>260</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Account Type:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>430</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 14pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Title of Account:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="AccountBox">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>310</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Account Type</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Current Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Good Citizen Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mukammal Current Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Business Partner Account </string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Basic Banking Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>E-Transiction Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Employe Banking Current Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Employe Banking Current Plus Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Urooj Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mahana Amdani Saving Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Unisaver Plus Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>First Minor Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Zindagi Account (for 60 &amp; above)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Employee Banking Saving  Account</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Others</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>180</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 16pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Account Details&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="title_entry">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>480</y>
+      <width>441</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="US1">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>310</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Are you US national?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="US2">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>350</y>
+      <width>221</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:10pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Is your birth place US?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="US3">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>390</y>
+      <width>241</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:10pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Do you have US address?</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="US4">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>430</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:10pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Do you have US links?</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="forward">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>150</y>
+      <width>60</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../Images/arroe_right.png</normaloff>../Images/arroe_right.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>150</y>
+      <width>60</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../Images/arroe_left.png</normaloff>../Images/arroe_left.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>649</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(222, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>30</y>
+      <width>360</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../Images/Logo.png</normaloff>../Images/Logo.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>350</width>
+      <height>350</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
