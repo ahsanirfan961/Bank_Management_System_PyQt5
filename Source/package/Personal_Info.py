@@ -31,6 +31,7 @@ class Personal_Info(QDialog):
             self.DOBBox.setDate(QtCore.QDate.fromString(DOB, 'yyyy-MM-dd'))
             self.GenderBox.setCurrentText(data.Gender[int(Gender)])
             self.EducationBox.setCurrentText(data.Education[int(Education)])
+            print(Nationality)
             self.NationalityBox.setCurrentText(data.Countries[int(Nationality)])
             self.ProfessionBox.setCurrentText(data.Profession[int(Profession)])
             self.CNICDOBBox.setDate(QtCore.QDate.fromString(CNIC_issue, 'yyyy-MM-dd'))
@@ -193,7 +194,7 @@ class Personal_Info(QDialog):
             data.education = self.EducationBox.currentText()
             data.education_index=0
             for i in data.Education:
-                if data.education==i:
+                if data.education==i: 
                     break
                 data.education_index = data.education_index + 1
                 

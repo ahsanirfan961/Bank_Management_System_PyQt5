@@ -29,8 +29,9 @@ class Profile_Settings(QDialog):
         fname = self.fname_entry.text()
         lname = self.lname_entry.text()
         username = self.username_entry.text()
+        mobile = self.mobile_entry.text()
         
-        if data.sqlManager.updateRow(self, 'Application_User', ['First_Name', 'Last_Name', 'Email'], [fname, lname, username], ['ID', data.CurrentUserID]):
+        if data.sqlManager.updateRow(self, 'Application_User', ['First_Name', 'Last_Name', 'Email'], [fname, lname, username], ['ID', data.CurrentUserID]) and data.sqlManager.updateRow(self, 'Contact', ['Mobile'], [mobile], ['ID', data.CurrentUserID]):
             messageBox = QMessageBox()
             messageBox.setText("Saved Successfully!\nLogin again to reflect change!")
             messageBox.setIcon(QMessageBox.Information)

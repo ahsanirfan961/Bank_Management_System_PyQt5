@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMessageBox, QFrame, QLabel, QApplication, QDialog
 from PyQt5.QtCore import Qt, QTimer, QEventLoop
 from PyQt5.QtGui import QMovie
 from PyQt5 import QtWidgets
+import psycopg2
 
 
 class SQLManager():
@@ -11,7 +12,8 @@ class SQLManager():
         with open('Configuration.config', 'r') as file:
             connection_string = str(file.read().strip())
         try:
-            self.conn = pyodbc.connect(connection_string)
+            # self.conn = pyodbc.connect(connection_string)
+            self.conn = psycopg2.connect(user="tvbospfe", password="856nhEo741c_VLLWeIwMbInbQyE1AMbN", host="horton.db.elephantsql.com")
             print("Connected to SQL Server successfully!")
         except pyodbc.Error as e:
             print("Error connecting to SQL Server:", e) 
@@ -93,15 +95,12 @@ class SQLManager():
         self.startLoading(parent, frame, label)
         columnNames = ', '.join(columns)
         columnValues = "', '".join(values)
-        query = f"INSERT INTO {tableName}(ID, {columnNames}) VALUES ((SELECT MAX(ID)+1 FROM {tableName}), '{columnValues}');"
+        query = f"INSERT INTO {tableName}(ID, {columnNames}) VALUES ((SELECT COALESCE(MAX(ID), 0) + 1 FROM {tableName}), '{columnValues}');"
         self.cursor.execute(query)
-        if self.cursor.rowcount >0:
-            self.result = 1
-            self.cursor.commit()
+        self.result = 1
+        self.cursor.execute("commit")
         self.stopLoading(frame, label)
-        if self.cursor.rowcount>0:
-            return True
-        return False
+        return True
     
     def updateRow(self, parent, tableName, columns, values, defaultValues):
         self.result = None
@@ -114,13 +113,11 @@ class SQLManager():
         condition = ', '.join(conditions)
         query = f"UPDATE {tableName} SET {condition} WHERE {defaultValues[0]} = '{defaultValues[1]}';"
         self.cursor.execute(query)
-        if self.cursor.rowcount >0:
-            self.result = 1
-            self.cursor.commit()
+        self.result = 1
+        self.cursor.execute("commit")
         self.stopLoading(frame, label)
-        if self.cursor.rowcount>0:
-            return True
-        return False
+        return True
+
     
     def executeQuery(self, parent, query):
         mode = query.split(' ', 1)[0]
@@ -132,17 +129,14 @@ class SQLManager():
         if mode == 'SELECT':
             self.result = self.cursor.fetchall()
         else:
-            if self.cursor.rowcount > 0:
-                self.cursor.commit()
-                self.result = 1
+            self.cursor.execute("commit")
+            self.result = 1
         self.stopLoading(frame, label)
         if mode == 'SELECT':
             return self.result
         else:
-            if self.cursor.rowcount > 0:
-                return True
-            else:
-                False
+            return True
+
     
     def startLoading(self, parent, frame, label):
 

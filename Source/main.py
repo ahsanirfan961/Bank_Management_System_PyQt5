@@ -1,5 +1,5 @@
 from package.Welcome import Welcome
-import sys
+import sys 
 from package.data import widget, app, sqlManager
 
 
